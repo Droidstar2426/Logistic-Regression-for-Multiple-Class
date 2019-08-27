@@ -1,6 +1,6 @@
 clear all;
 clc;
-x=load('checkalphatrainfinal.txt');
+x=load('dataset.txt'); %load the dataset
 x1=x(:,1:end-1);
 y=x(:,end);
 iterations=4000;
@@ -17,7 +17,7 @@ theta=zeros(size(x1,2),1);
 end
 %y1=load('testflower.txt');
 %y2=y1(:,1:3);
-y2=[1    0     0     0     0    16    16     6     6     6     5     4     0     0     0     0];
+y2=[1    0     0     0     0    16    16     6     6     6     5     4     0     0     0     0]; %load the testing dataset
 for i=1:length(uniinputs)
  testtheta=final(:,i);
 accuracy(i)=sigmoidfunc(y2,testtheta);
